@@ -127,6 +127,7 @@ static inline size_t sdsavail(const sds s) {
     return 0;
 }
 
+//设置sds长度
 static inline void sdssetlen(sds s, size_t newlen) {
     unsigned char flags = s[-1];
     switch(flags&SDS_TYPE_MASK) {
@@ -151,6 +152,7 @@ static inline void sdssetlen(sds s, size_t newlen) {
     }
 }
 
+//扩容
 static inline void sdsinclen(sds s, size_t inc) {
     unsigned char flags = s[-1];
     switch(flags&SDS_TYPE_MASK) {
@@ -194,6 +196,7 @@ static inline size_t sdsalloc(const sds s) {
     return 0;
 }
 
+//设置分配大小
 static inline void sdssetalloc(sds s, size_t newlen) {
     unsigned char flags = s[-1];
     switch(flags&SDS_TYPE_MASK) {
